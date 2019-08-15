@@ -25,6 +25,7 @@ html {
     justify-content: space-around;
     align-items: center;
     height: 40px;
+    font-family: 'Arvo', serif;
     background-color: green;
     border: 2px solid rgb(30, 168, 30);
 }
