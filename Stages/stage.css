@@ -96,6 +96,7 @@ html {
 }
 
 .info {
+    font-size: 2rem;
     list-style-type: none;
     display: flex;
     flex-flow: column wrap;
@@ -111,6 +112,7 @@ html {
 }
 
 .table_content {
+    size: cover;
     border-collapse: collapse;
     background-color: rgb(30, 168, 30);
     color: white;
@@ -123,24 +125,33 @@ tr :nth-child(odd) {
 #table_heading {
     font-family: 'Arvo', serif;
     font-weight: bold;
+    font-size: 2rem
 }
 
 .table_heading_cell {
     padding: 10px 0px;
+    font-size:2rem;
 }
 
 .table_content_cell {
     padding: 5px 5px;
+    font-size:2rem;
 }
 
 .topic {
     font-family: 'Arvo', serif;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 4rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-shadow: 2px 2px 5px gray , 0px 0px 20px black;
 }
-
+.darken {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      );
+}
