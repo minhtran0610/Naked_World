@@ -48,7 +48,7 @@ function checkAnswer(ans) {
     
     if (ans == question[currentQuestionIndex].correct) {
         score += 10;
-        console.log(score)
+        scoreEl.innerHTML = `SCORE: ${score}`
         if (currentQuestionIndex < lastQuestionIndex) {
             currentQuestionIndex ++
             renderQuestion(currentQuestionIndex)
@@ -58,10 +58,7 @@ function checkAnswer(ans) {
         }
     } else {
         score -= 5
-        if (score < 0) {
-            score = 0
-        }
-        console.log(score)
+        scoreEl.innerHTML = `SCORE: ${score}`
     }
 }
 
