@@ -86,3 +86,12 @@ html {
     color: white;
     text-decoration: white underline;
 }
+
+/* content */
+#main-heading {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Arvo', serif;
+    font-weight: bold;
+    margin-top: 10px;
+}

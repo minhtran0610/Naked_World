@@ -96,7 +96,7 @@ html {
 }
 
 .info {
-    font-size: 2rem;
+    font-size: 1rem;
     list-style-type: none;
     display: flex;
     flex-flow: column wrap;
@@ -125,23 +125,23 @@ tr :nth-child(odd) {
 #table_heading {
     font-family: 'Arvo', serif;
     font-weight: bold;
-    font-size: 2rem
+    font-size: 1rem;
 }
 
 .table_heading_cell {
     padding: 10px 0px;
-    font-size:2rem;
+    font-size: 1rem;
 }
 
 .table_content_cell {
     padding: 5px 5px;
-    font-size:2rem;
+    font-size: 1rem;
 }
 
 .topic {
     font-family: 'Arvo', serif;
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2rem;
     width: 100%;
     display: flex;
     justify-content: center;
