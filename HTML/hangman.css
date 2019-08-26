@@ -18,6 +18,7 @@ html {
     font-size: 3rem;
     color: white;
     text-shadow: 2px 2px 2px green;
+    cursor: pointer;
 }
 
 .page_menu {
