@@ -1,101 +1,117 @@
 var words = ["aerosol","decibel","deforestation"];
-var word = words[Math.floor(Math.random() * words.length)];
-// // summon the buttons
-//     var alphabet = ["a","b","c","d","e","f","g","h","i","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-//     var buttons = function () {
-//     keyboard = document.getElementById("butts");
-//     keys = document.createElement("ul")
-//     for (var i = 0; i < alphabet.length; i++) {
-//         keys.id = 'alphabet';
-//         list = document.createElement('li');
-//         list.id = 'letter';
-//         list.innerHTML = alphabet[i];
-//         check();
-//         keyboard.appendChild(keys);
-//         letters.appendChild(list);
-//     }
-//     }
-    
-    // Set up the amswer answerArray
-    var answerArray = [];
-    for (var i = 0; i < word.length; i++) {
-      answerArray[i] = "_";
+function drawWord(wo, gu)
+{
+    var nword = ""; var ok;        
+    for (var i = 0; i < wo.length; i++) {
+        ok = false;
+        for (var j = 0; j < gu.length; j++)
+        {
+            if (gu[j] == wo[i]) {
+                nword = nword + wo[i].toUpperCase() + ' ';
+                ok = true;
+                break; 
+            }
+        }
+        if (!ok) nword = nword + '_ ';
     }
-    
-    var remainingLetters = word.length;
-    
-    // The game loop
-    
-    while (remainingLetters > 0) {
-    // Show the player their progress 
-    alert(answerArray.join(" "));
-    
-    // Get a guess from the player
-    
-    var guess = prompt("Guess a letter, or click Cancel to stop playing.");
-    if (guess === null) {
-    // Exit the game loop
-    break;
-    } else if (guess.length !== 1) {
-    alert("Please enter a single letter.");
-    } else {
-    // Update the game state with the guess
-    
-    for (var j = 0; j < word.length; j++) {
-      if (word[j] === guess) {
-        answerArray[j] = guess; remainingLetters--;
-      }
-    }
-    }
-    
-    // The end of the game loop
-    }
-    
-    // Show the answer and congratulate the player
-    
-    alert(answerArray.join(" "));
-    alert("Good job! The answer was " + word);
-    
-    // Write your functions here
-    
-    var word = pickWord();
-    var answerArray = setupAnswerArray(word);
-    var remainingLetters = word.length;
-    var pickWord = function () {
-    // Return a random word
-    };
-    
-    var setupAnswerArray = function (word) {
-    // Return the answer array
-    };
-    var showPlayerProgress = functin (answerArray)
-    {
-    //Use alert to show the player their progress
-    };
-    
-    var getGuess = function () {
-    // Use prompt to get a guess
-    };
-    
-    var updateGameState = function (guess, word, answerArray) {
-    // Update answerArray and return a number showing how many times the guess appears in the word so remainingLetters can be updated
-    };
-    
-    var showAnswerAndCongratulatePlayer = function (answerArray) {
-    // Use alert to show the answer and congratulate the player
-    };
-    while (remainingLetters > 0) {
-    showPlayerProgress(answerArray);
-    var guess = getGuess();
-    if (guess === null) {
-    break;
-    } else if (guess.length !== 1) {
-    alert("Please enter a single letter.");
-    } else {
-    var correctGuesses = updateGameState(guess, word, answerArray);
-    remainingLetters -= correctGuesses;
-    }
-    }
-    
-    showAnswerAndCongratulatePlayer(answerArray);
+    $('#theword').html(nword);
+}
 
+function checkWin(p)
+{
+    for (var i = 0; i < p.length; i++)
+        if (p[i] == '_') return false;
+    return true;
+}
+
+$(document).ready(function(){
+    var w = words[Math.floor(Math.random() * words.length)];
+    var guess = "";
+    var t = 0;
+    // var c = document.getElementById("display");
+    // var ctx = c.getContext("2d");
+    // ctx.font="30px Arial";
+    // ctx.strokeText("Hangman",235,50);
+    drawWord(w, guess);
+    $('#letters a').click(function(){
+        var vl = $(this).attr('value');
+        if (w.indexOf(vl) != -1)
+        {
+            guess = guess + vl;
+            $(this).hide();
+            drawWord(w, guess);
+            if (checkWin($('#theword').html())) {
+                $('#msg').html('Well done! Reload the page to play again.');
+                $('#letters').hide();
+            }
+        } else {
+            t++;
+            $(this).hide();                 
+            switch(t)
+            {
+                case 1: {
+                    ctx.moveTo(200, 300);
+                    ctx.lineTo(200, 100);
+                    ctx.stroke();
+                } break;
+                case 2: {
+                    ctx.moveTo(200, 275);
+                    ctx.lineTo(225, 300);
+                    ctx.stroke();
+                } break;
+                case 3: {
+                    ctx.moveTo(200, 100);
+                    ctx.lineTo(325, 100);
+                    ctx.stroke();
+                } break;
+                case 4: {
+                    ctx.moveTo(200, 125);
+                    ctx.lineTo(225, 100);
+                    ctx.stroke();
+                } break;
+                case 5: {
+                    ctx.moveTo(325, 100);
+                    ctx.lineTo(325, 130);
+                    ctx.stroke();
+                } break;
+                case 6: {
+                    ctx.beginPath();
+                    ctx.arc(325,150,20,0,2*Math.PI);
+                    ctx.closePath();
+                    ctx.stroke();
+                } break;
+                case 7: {
+                    ctx.moveTo(325, 170);
+                    ctx.lineTo(325, 230);
+                    ctx.stroke();
+                } break;
+                case 8: {
+                    ctx.moveTo(325, 180);
+                    ctx.lineTo(300, 215);
+                    ctx.stroke();
+                } break;
+                case 9: {
+                    ctx.moveTo(325, 180);
+                    ctx.lineTo(350, 215);
+                    ctx.stroke();
+                } break;
+                case 10: {
+                    ctx.moveTo(325, 230);
+                    ctx.lineTo(300, 265);
+                    ctx.stroke();
+                } break;
+                case 11: {
+                    ctx.moveTo(325, 230);
+                    ctx.lineTo(350, 265);
+                    ctx.stroke();
+                } break;
+            }
+               
+            if (t == 11) {
+                $('#msg').html('You are dead! Reload the page to play again.');
+                $('#letters').hide();
+                $('#theword').html(w.toUpperCase());
+            }
+        }
+    });
+});

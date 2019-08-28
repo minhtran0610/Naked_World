@@ -95,4 +95,34 @@ html {
     font-family: 'Arvo', serif;
     font-weight: bold;
     margin-top: 10px;
+    color: white
+}
+body {
+	/* background-color: #CCFFCC;
+    color: #663366; */
+    background-image: url(https://wallpapercave.com/wp/8mmRiRn.jpg);
+    background-size: cover
+}
+
+#display {
+	background-color: white;
+	border: 1px solid black;
+}
+
+
+#theword {
+	font-family: "Courier New", Courier, monospace; 
+}
+
+#letters {
+	font-family: Georgia, serif;
+}
+#playarea {
+    background-image: 
+      linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      );
+    color: white;
+    font-size: 1.85rem
 }
