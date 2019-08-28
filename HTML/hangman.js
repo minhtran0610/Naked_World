@@ -28,8 +28,8 @@ $(document).ready(function(){
     var w = words[Math.floor(Math.random() * words.length)];
     var guess = "";
     var t = 0;
-    // var c = document.getElementById("display");
-    // var ctx = c.getContext("2d");
+    var c = document.getElementById("display");
+    var ctx = c.getContext("2d");
     // ctx.font="30px Arial";
     // ctx.strokeText("Hangman",235,50);
     drawWord(w, guess);
