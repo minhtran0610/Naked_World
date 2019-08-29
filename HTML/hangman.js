@@ -1,4 +1,5 @@
 var words = ["aerosol","decibel","deforestation"];
+// for (var i = 0; i <words.length; i++) {
 function drawWord(wo, gu)
 {
     var nword = ""; var ok;        
@@ -24,14 +25,17 @@ function checkWin(p)
     return true;
 }
 
-$(document).ready(function(){
+// $(document).ready
+$('#fire').click(function(){
+    $(this).hide
+    $('#letters').show();
+    $('#letters a').show();
     var w = words[Math.floor(Math.random() * words.length)];
     var guess = "";
     var t = 0;
     var c = document.getElementById("display");
     var ctx = c.getContext("2d");
-    // ctx.font="30px Arial";
-    // ctx.strokeText("Hangman",235,50);
+    ctx.clearRect(0, 0, display.width, display.height);
     drawWord(w, guess);
     $('#letters a').click(function(){
         var vl = $(this).attr('value');
@@ -41,7 +45,7 @@ $(document).ready(function(){
             $(this).hide();
             drawWord(w, guess);
             if (checkWin($('#theword').html())) {
-                $('#msg').html('Well done! Reload the page to play again.');
+                $('#msg').html('Well done!');
                 $('#letters').hide();
             }
         } else {
@@ -108,10 +112,11 @@ $(document).ready(function(){
             }
                
             if (t == 11) {
-                $('#msg').html('You are dead! Reload the page to play again.');
+                $('#msg').html('You are dead!');
                 $('#letters').hide();
                 $('#theword').html(w.toUpperCase());
             }
         }
     });
 });
+// }
