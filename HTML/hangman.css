@@ -98,8 +98,6 @@ html {
     color: white
 }
 body {
-	/* background-color: #CCFFCC;
-    color: #663366; */
     background-image: url(https://wallpapercave.com/wp/8mmRiRn.jpg);
     background-size: cover
 }
@@ -108,14 +106,17 @@ body {
 	background-color: white;
 	border: 1px solid black;
 }
-
+#fire {
+    border-radius: 8px
+    
+}
 
 #theword {
-	font-family: "Courier New", Courier, monospace; 
+	font-family: 'PT Sans', sans-serif;
 }
 
 #letters {
-	font-family: Georgia, serif;
+	font-family: 'PT Sans', sans-serif;
 }
 #playarea {
     background-image: 
