@@ -24,7 +24,7 @@ var question = [{
     choice_A: "A. Take baths instead of showers",
     choice_B: "B. Use the washing machine every time there is some dirty clothes",
     choice_C: "C. Turning off water taps when not using",
-    correct: "",
+    correct: "C",
 }];
 const questionContainer = document.getElementById("questions")
 const questionEl = document.getElementById("question")
