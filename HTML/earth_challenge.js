@@ -54,7 +54,7 @@ function checkAnswer(ans) {
             renderQuestion(currentQuestionIndex)
         } else {
             currentQuestionIndex = currentQuestionIndex;
-            window.location.href="air_content.html";
+            alert("please move to next session")
         }
     } else {
         score -= 5
